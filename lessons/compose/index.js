@@ -5,6 +5,8 @@ const x = 3
 
 const result1 = f(g(x)) // 7
 
+console.log(result1)
+
 // Slightly more useful functions
 const scream = str => str.toUpperCase()
 const exclaim = str => `${str}!`

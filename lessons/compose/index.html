@@ -1,0 +1,24 @@
+<!doctype html>
+
+<html>
+  <body>
+    <script>
+        // Allows Plunker to display logs in preview panel 
+        // for better in-browser experience
+        var originalConsoleLog = console.log
+        console.log = function () {
+          originalConsoleLog.apply(console, arguments)
+          var args = Array.prototype.slice.call(arguments);
+          var stringifiedArgs = args.join(' ') + '\n';
+          var newDiv = document.createElement("div"); 
+          var newContent = document.createTextNode(stringifiedArgs); 
+          newDiv.appendChild(newContent);
+          document.body.appendChild(newDiv)
+          
+          document.querySelector('div').style['fontFamily'] = 'monospace';
+          document.querySelector('div').style['fontSize'] = '1.5em';
+        };
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>
